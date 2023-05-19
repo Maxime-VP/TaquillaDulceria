@@ -23,6 +23,8 @@ El usuario puede decidir si quiere palomitas, refresco y/o un combo.
   
 
 # Consideraciones
-Este programa está hecho con C++ standard y corre en la consola
-Para correrlo adeuadamente se deberán descargar todos los archivos en una sola carpeta
+Este programa está hecho con C++ standard y corre en la consola.
+
+Para correrlo adeuadamente se deberán descargar todos los archivos en una sola carpeta.
+
 El programa tendrá validacion del tipo variables para que en lugar de que el progama crasheé cuando se introduzca un valor no valido, se vuelva a hacer la solicitud al usuario.
