@@ -31,3 +31,4 @@ Para correrlo adeuadamente se deberán descargar todos los archivos en una sola 
 
 El programa tendrá validacion del tipo variables para que en lugar de que el progama crasheé cuando se introduzca un valor no valido, se vuelva a hacer la solicitud al usuario.
 Por el momento la validación no está completa, al introducir valores ajenos a los solicitados es posible que el programa crasheé o regrese un valor basura (esto pasa al seleccionar un tamaño inválido, pues de este depende que se asigne un costo al producto).
+De igual forma la parte de eliminar productos aún no está implementada por lo que por el momento solo se pueden agregar los precios de forma indefinida.
