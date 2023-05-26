@@ -23,8 +23,11 @@ El usuario puede decidir si quiere palomitas, refresco y/o un combo.
   
 
 # Consideraciones
-Este programa está hecho con C++ standard y corre en la consola.
 
+El funcionamiento de este es el de llevar la cuenta de cliente e ir sumando el costo de los productos con sus especificaciones.
+
+Este programa está hecho con C++ standard y corre en la consola.
 Para correrlo adeuadamente se deberán descargar todos los archivos en una sola carpeta.
 
 El programa tendrá validacion del tipo variables para que en lugar de que el progama crasheé cuando se introduzca un valor no valido, se vuelva a hacer la solicitud al usuario.
+Por el momento la validación no está completa, al introducir valores ajenos a los solicitados es posible que el programa crasheé o regrese un valor basura (esto pasa al seleccionar un tamaño inválido, pues de este depende que se asigne un costo al producto).
