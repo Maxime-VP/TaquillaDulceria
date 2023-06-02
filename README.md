@@ -33,6 +33,8 @@ El programa tendrá validacion del tipo variables para que en lugar de que el pr
 
 Por el momento la validación no está completa, al introducir valores ajenos a los solicitados es posible que el programa crasheé o regrese un valor basura (esto pasa al seleccionar un tamaño inválido, pues de este depende que se asigne un costo al producto).
 
+Para guardar los productos se crearon dos listas, una de 0-15 espacios para objetos de tipo combo y otra de 0-15 espacios para objetos de tipo snack, cada que se crea un objeto de dicha clase se ocupa uno de esos espacios comenzando con el espacio 0. Por ello, no se puede pedir más objetos de los que caben en cualquiera de las listas ya que no los guardará.
+
 De igual forma la parte de eliminar productos no está implementada por lo que, por el momento, solo se pueden agregar los precios de forma indefinida.
 
 En el UML y en el código se usa tamano en lugar de tamaño para evitar que el programa crasheé
