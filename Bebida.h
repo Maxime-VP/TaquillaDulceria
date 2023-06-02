@@ -14,6 +14,7 @@ private:
 public:
     Bebida(string);
     Bebida();
+    string Imprime();
     //getters, regresan el valor del objeto para los parámetros especificados
 
 
@@ -23,8 +24,12 @@ Bebida::Bebida(string _tamano) : Snack(_tamano) { //constructor que recibe valor
 
 }
 
-Bebida::Bebida() : Snack() { //constructor que recibe valores del usuario
+Bebida::Bebida() : Snack() {
 
+}
+
+string Bebida::Imprime(){
+    return "Bebida ";
 }
 
 #endif //PROYECTO_CINE_2_BEBIDA_H

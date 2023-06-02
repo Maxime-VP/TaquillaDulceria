@@ -27,6 +27,8 @@ public:
     double getCosto();
     void setCosto(string); // nnnn recibe string de tamano y pone un valor predeterminado
     void setTamano(string);
+    virtual string Imprime();
+
 };
 
 Snack::Snack(string _tamano) { //constructor que recibe valores del usuario
@@ -61,6 +63,10 @@ void Snack:: setCosto(string _tamano) {
     if (_tamano == "chico" or _tamano == "Chico" or _tamano == "C" or _tamano == "c") {
         costo = 70;
     }
+}
+
+string Snack::Imprime(){
+    return "Snack ";
 }
 
 #endif //PROYECTO_CINE_2_SNACK_H

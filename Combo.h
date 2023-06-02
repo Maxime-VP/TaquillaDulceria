@@ -9,7 +9,6 @@
 
 
 
-//
 // Created by Maxime on 5/25/2023.
 //
 #include <iostream>
@@ -22,10 +21,12 @@ protected:
     Palomitas palomitas; //atributo del tipo objeto de clase Palomitas
     Bebida bebida;
 
+
 public:
    Combo();
-   double getCosto();
-
+   virtual double getCosto();
+   virtual string Imprime();
+   virtual void setCosto();
 };
 
 Combo::Combo() { //constructor que recibe valores del usuario
@@ -39,5 +40,14 @@ Combo::Combo() { //constructor que recibe valores del usuario
 double Combo::getCosto(){
     return precio;
 }
+
+string Combo::Imprime() {
+    return "Combo";
+}
+
+void Combo:: setCosto() {
+    precio = 148;
+}
+
 
 #endif //PROYECTO_CINE_2_COMBO_H

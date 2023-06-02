@@ -18,15 +18,19 @@ public:
     Palomitas(string);
     //getters, regresan el valor del objeto para los parámetros especificados
     Palomitas();
-
+    string Imprime();
 };
 
 Palomitas::Palomitas(string _tamano) : Snack(_tamano) { //constructor que recibe valores del usuario
 
 }
 
-Palomitas::Palomitas() : Snack() { //constructor que recibe valores del usuario
+Palomitas::Palomitas() : Snack() {
 
+}
+
+string Palomitas::Imprime(){
+    return "Palomitas ";
 }
 
 #endif //PROYECTO_CINE_2_PALOMITAS_H
