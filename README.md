@@ -37,3 +37,5 @@ De igual forma la parte de eliminar productos no está implementada por lo que, 
 
 En el UML y en el código se usa tamano en lugar de tamaño para evitar que el programa crasheé
 
+El UML no está actualizado, los objetos nachos y hotdog no han sido empleados pues no son requeridos para el funcionamiento del código, de igual forma, algunos atributos y funciones de las clases no fueron empleados o se implementaron de forma distinta y requieren actualizarse.
+
