@@ -41,6 +41,6 @@ Para guardar los productos se crearon dos listas de apuntadores, una de 0-15 esp
 
 En el UML y en el código se usa tamano en lugar de tamaño para evitar que el programa crasheé
 
-#Correcciones
+# Correcciones
 Se han identificado los casos que harían que el código deje de funcionar adecuadamente.
 El polimorfismo está presente en la función imprimeCostoT(); de la clase Cuenta, en esta función se utilizan dos listas, una de objetos Combo y una de Objetos Snack, en las que se guardan objetos de las clases hijas de sus respectivas clases, y se utilizan apuntadores para emplear las funciones de las mismas.
