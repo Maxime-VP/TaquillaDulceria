@@ -16,18 +16,19 @@ using namespace std;
 
 class Snack { //crea clase
 protected:
-    double costo;
+    double costo; //atributos
     string tamano;
 
 public:
     Snack(string);//constructor
-    Snack();
+    Snack(); //constructor default que se usa cuando se crea directamente en combo
+
     //getters, regresan el valor del objeto para los parámetros especificados
     string getTamano();
     double getCosto();
-    void setCosto(string); // nnnn recibe string de tamano y pone un valor predeterminado
-    void setTamano(string);
-    virtual string Imprime();
+
+    void setCosto(string); //recibe string de tamano y pone un valor predeterminado
+    virtual string Imprime() =0 ; //abstract, permite utilizar las funciones de las clases hijas
 
 };
 
@@ -48,12 +49,7 @@ double Snack::getCosto(){
     return costo;
 }
 
-
-void Snack:: setTamano(string _tamano) {
-    tamano = _tamano;
-}
-
-void Snack:: setCosto(string _tamano) {
+void Snack:: setCosto(string _tamano) { //asigna un valor al costo dependiendo del tamano
     if (_tamano == "grande" or _tamano == "Grande" or _tamano == "G" or _tamano == "g") {
         costo = 89;
     }
@@ -65,8 +61,10 @@ void Snack:: setCosto(string _tamano) {
     }
 }
 
-string Snack::Imprime(){
-    return "Snack ";
-}
+//No se requiere la siguiente función debido a que es un abstract:
+//string Snack::Imprime(){
+//    return "Snack ";
+//}
+
 
 #endif //PROYECTO_CINE_2_SNACK_H

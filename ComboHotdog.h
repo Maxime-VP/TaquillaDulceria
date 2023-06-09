@@ -12,30 +12,21 @@ class ComboHotdog : public Combo { //crea clase
 private:
 
 public:
-    ComboHotdog();
-    double getCosto();
-    void setCosto();
-    string Imprime();
-    //getters, regresan el valor del objeto para los parámetros especificados
-
-
+    ComboHotdog(); //constructor
+    void setCosto();//funcion para darle un costo propio a ComboHotdog
+    string Imprime(); //funcion para imprimir el tipo de combo que es
 };
 
-ComboHotdog::ComboHotdog(): Combo() { //constructor que recibe valores del usuario
-
+ComboHotdog::ComboHotdog(): Combo() { //constructor default
 }
 
-string ComboHotdog::Imprime(){
+string ComboHotdog::Imprime(){ //funcion para imprimir el tipo de combo que es
     return "Combo Hotdog ";
 
 }
 
-void ComboHotdog:: setCosto() {
-    precio = 148+30;
-}
-
-double ComboHotdog::getCosto(){
-    return precio;
+void ComboHotdog:: setCosto() { //funcion para darle un costo propio a ComboHotdog
+    precio = precio + 55;
 }
 
 #endif //PROYECTO_CINE_2_COMBOHOTDOG_H

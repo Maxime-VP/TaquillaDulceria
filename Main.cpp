@@ -1,102 +1,85 @@
 #include <iostream>
-#include "Palomitas.h"
-#include "Bebida.h"
-#include "Combo.h"
-#include "Snack.h"
-#include "ComboNachos.h"
-#include "ComboHotdog.h"
-
+#include "Cuenta.h"
 
 using namespace std;
 
+//Función menu que imprime las diferentes opciones que se pueden utilizar
 void menu(){
-
-    cout << "(1) Combo \n"; //Por programar
-    cout << "(2) Palomitas \n"; //Programado
-    cout << "(3) Refresco \n" << endl; //Por programar
+    cout << "(1) Combo \n(2) Palomitas \n(3) Refresco \n" << endl;
 }
 
-string tamanoOrden() { //da valor al tamaño de palomitas
+//Función que recibe un valor de tamaño
+//Se usa cuando el usuario pide una bebida o unas palomitas
+string tamanoOrden() {
     string _tamano;
     cout << "De que tamano? (Grande, Mediano, Chico)" << endl;
-    cin >> _tamano;
-    return _tamano;
+    cin >> _tamano; //lee _tamano del usuario
+    return _tamano; //regresa _tamano
 }
-
 
 int main() {
 
+    Cuenta cuent;
+    double total;
+
     cout << "Bienvenido al Cine, que desea ordenar? \n";
 
-    Combo *comboPtr[15]; // nnnnn
-    Snack *botana[15]; // se crea arreglo de apuntadores
-    int i = 0, v=0, c=0; //se crea una variable para ciclo
-                     //v es la variable que uso para validar
-                     //c es la variable para ciclo combo
+    //mover i a cuenta
+    int i = 0, v=0, c=0;
+    //i cuenta objetos snack para evitar que se salgan de los límites
+    //c cuenta objetos Combo para evitar que se salgan de los límites
+    //v es la variable que uso para validar
 
-    double total, _costo, mensajeP;
-    string orden, _tamano, mensaje, respuesta;
+    string orden, _tamano, respuesta;
+    //orden recibe la elección del usuario respecto a las opciones de la función menu
+    //_tamano se usa en el constructor de ambos objetos de tipo snack y en su función setCosto
+    //respuesta se utiliza parar saber si el usuario desea ordenar algo más o terminar el programa
+
     string tipo;
+    //tipo recibe el tipo de combo que quiere el usuario Nacho o Hotdog
 
     while (v == 0) {  //corre el código hasta que se utilice uno de los 3 valores aceptados
-        menu();
+        menu(); //imprime el menu
 
         cin >> orden;
 
         if (orden == "1") { //valida la eleccion del usuario
 
 
-            // Este segmento recibe la eleccion de tamaño
-
+            // Este segmento recibe la eleccion de tipo de combo
             cout << "Escriba (Nacho) para Combo nachos o (Hotdog) para Combo hotdog \n";
             cin >> tipo;
-
-            //Este segmento asigna el costo del producto dependiendo del Combo elegido
+            //Este segmento asigna el Combo elegido a el espacio de la lista de apuntadores de combo actual
             if (tipo=="Nacho"){
-                comboPtr[c]= new ComboNachos();
-
+                cuent.agregaCNachos(); //agrega objeto default de ComboNachos a cuent
             }
             if (tipo=="Hotdog"){
-                comboPtr[c]= new ComboHotdog();
-
+                cuent.agregaCHotdog(); //agrega objeto default de ComboHotdog a cuent
             }
 
-            comboPtr[c] ->setCosto();
-            cout << "Combo Nachos " <<  comboPtr[c] ->getCosto() << " " << "$" << endl;
-            total = total + comboPtr[c] ->getCosto(); //suma el costo del producto al total
+            //cuando c llega al límite de objetos permitidos termina el programa
+            //esto es para evitar guardar datos fuera de la lista de apuntadores
+            if (c>13){
+                cout << "Ha llegado al limite de productos combo \n";
+                respuesta = "No";
+                //usa un string en lugar de un break para que el resto del código se corra con normalidad
+            }
+            //si aún hay espacio en la lista corre normalmente
+            else {
+                cout << "Desea algo mas? (Si, No) \n";
+                cin >> respuesta;
+            }
 
-            cout << "Desea algo mas? (Si, No) \n";
+            c= c++; //se usa para terminar la función cuando se acaban los espacios en las listas de cuent
 
-            //nnnnn if i=14 breackear ciclo
-
-            cin >> respuesta;
-
-            c= c + 1;
-
+            //valida si se desea ordenar algo más
             if (respuesta == "Si" or respuesta == "S" or respuesta == "s" or respuesta == "si" or respuesta =="SI"){
-                v=0;
+                v=0; //mantiene v igual y continua el ciclo
             }
             else {
                 cout << "\n";
-                if (c !=0){
-                    for (int b=0; b<c; b++){
-                        mensaje = comboPtr[b]->Imprime();
-                        mensajeP = comboPtr[b]->getCosto();
-                        cout << mensaje << "  " << mensajeP << "\n";
-                    }
-                }
-                if (i!=0){
-                    for (int a=0; a<i; a++){
-                        mensaje = botana[a]->Imprime();
-                        mensajeP = botana[a]->getCosto();
-                        cout << mensaje << "  " << mensajeP << "\n";
-                    }
-                }
-
-
-                cout << "\nEl total es " << total<<"$";
-
-                break;
+                cuent.imprimeCostoT();//imprime lo contenido en la cuenta
+                break; //termina el programa
             }
 
         }
@@ -104,55 +87,33 @@ int main() {
         if (orden == "2") { //valida la eleccion del usuario
 
             // Este segmento recibe la eleccion de tamaño
-
-
             _tamano = tamanoOrden();
 
-            //Este segmento asigna el costo del producto dependiendo del tamaño
+            cuent.agregaPalomitas(_tamano);
 
-
-            //Palomitas P1 = Palomitas(_tamano); esta es la forma original que tenía de agregar palomitas
-            //P1.setCosto(_tamano);
-            //botana[i] nos permite crear multiples instancias de palomitas o referescos y acceder a ellas después
-            botana[i]= new Palomitas(_tamano);
-            botana[i] ->setCosto(_tamano);
-
-
-            cout << "Palomitas tamano " << botana[i] ->getTamano() << " " << botana[i] ->getCosto() << "$" << endl;
-            total = total + botana[i] ->getCosto(); //suma el costo del producto al total
-
-            cout << "Desea algo mas? (Si, No) \n";
-
-            //nnnnn if i=14 breackear ciclo
-
-            cin >> respuesta;
+            //cuando c llega al límite de objetos permitidos termina el programa
+            //esto es para evitar guardar datos fuera de la lista de apuntadores
+            if (i>13){
+                cout << "Ha llegado al limite de productos Snack \n";
+                respuesta = "No";
+                //usa un string en lugar de un break para que el resto del código se corra con normalidad
+            }
+                //si aún hay espacio en la lista corre normalmente
+            else {
+                cout << "Desea algo mas? (Si, No) \n";
+                cin >> respuesta;
+            }
 
             i= i + 1;
 
+            //sigue el ciclo si dice si
             if (respuesta == "Si" or respuesta == "S" or respuesta == "s" or respuesta == "si" or respuesta =="SI"){
                 v=0;
             }
+            //de otra forma imprime los objetos, sus precios y el total
             else {
                 cout << "\n";
-
-                if (c !=0){
-                    for (int b=0; b<c; b++){
-                        mensaje = comboPtr[b]->Imprime();
-                        mensajeP = comboPtr[b]->getCosto();
-                        cout << mensaje << "  " << mensajeP << "\n";
-                    }
-                }
-                if (i!=0){
-                    for (int a=0; a<i; a++){
-                        mensaje = botana[a]->Imprime();
-                        mensajeP = botana[a]->getCosto();
-                        cout << mensaje << "  " << mensajeP << "\n";
-                    }
-                }
-
-
-                cout << "\nEl total es " << total<<"$";
-
+                cuent.imprimeCostoT(); //imprime lo acumulado en cuenta
                 break;
             }
         }
@@ -160,59 +121,44 @@ int main() {
         if (orden == "3") { //valida la eleccion del usuario
 
             //Este segmento recibe la eleccion de tamaño
-
-
             _tamano = tamanoOrden();
-
             //Este segmento asigna el costo del producto dependiendo del tamaño
 
-            //Bebida B1 = Bebida(_tamano); esta era la creación original de bebida
-            //B1.setCosto(_tamano);
-            botana[i]= new Bebida(_tamano); //se guarda bebida en una lista de apuntadores
-            botana[i] ->setCosto(_tamano);
+            cuent.agregaBebida(_tamano);
 
-
-            cout << "Bebida tamano " << botana[i] ->getTamano() << " " << botana[i] ->getCosto() << "$" << endl;
-            total = total + botana[i] ->getCosto(); //suma el costo del producto al total
-
-            cout << "Desea algo mas? (Si, No) \n";
-            cin >> respuesta;
+            //cuando c llega al límite de objetos permitidos termina el programa
+            //esto es para evitar guardar datos fuera de la lista de apuntadores
+            if (i>13){
+                cout << "Ha llegado al limite de productos Snack \n";
+                respuesta = "No";
+                //usa un string en lugar de un break para que el resto del código se corra con normalidad
+            }
+                //si aún hay espacio en la lista corre normalmente
+            else {
+                cout << "Desea algo mas? (Si, No) \n";
+                cin >> respuesta;
+            }
 
             i= i + 1;
 
+            //continua el ciclo
             if (respuesta == "Si" or respuesta == "S" or respuesta == "s" or respuesta == "si" or respuesta =="SI"){
                 v=0;
             }
+            //si hay objetos Combo y/o Snack creados:
+            //imprime los valores de tipo y costo de los objetos Combo y Snack creados
             else {
                 cout << "\n";
-                if (c !=0){
-                    for (int b=0; b<c; b++){
-                        mensaje = comboPtr[b]->Imprime();
-                        mensajeP = comboPtr[b]->getCosto();
-                        cout << mensaje << "  " << mensajeP << "\n";
-                    }
-                }
-                if (i!=0){
-                    for (int a=0; a<i; a++){
-                        mensaje = botana[a]->Imprime();
-                        mensajeP = botana[a]->getCosto();
-                        cout << mensaje << "  " << mensajeP << "\n";
-                    }
-                }
-
-
-                cout << "\nEl total es " << total<<"$";
-
+                cuent.imprimeCostoT();
                 break;
             }
         }
 
         else {
-            //cout<< "Valor invalido, seleccione de nuevo";
+            //si no se selecciona un valor de 1-3, se cicla
             v=0;
         }
     }
 
     return 0;
 }
-

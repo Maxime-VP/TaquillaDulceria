@@ -12,31 +12,23 @@ class ComboNachos : public Combo { //crea clase
 private:
 
 public:
-    ComboNachos();
-    double getCosto();
-    void setCosto();
-    string Imprime();
-    //getters, regresan el valor del objeto para los parámetros especificados
-
-
+    ComboNachos(); //constructor
+    void setCosto(); //funcion para darle un costo propio a ComboNachos
+    string Imprime(); //funcion para imprimir el tipo de combo que es
 };
 
-ComboNachos::ComboNachos() : Combo() {
-
+ComboNachos::ComboNachos() : Combo() { //constructor default
 }
 
-string ComboNachos::Imprime() {
+string ComboNachos::Imprime() {//funcion para imprimir el tipo de combo que es
     return "Combo Nachos";
 }
 
-
-void ComboNachos:: setCosto() {
-    precio = 148+20;
+void ComboNachos:: setCosto() { //funcion para darle un costo propio a ComboNachos
+    precio = precio +40;
 }
 
-double ComboNachos::getCosto(){
-    return precio;
-}
+
 
 
 #endif //PROYECTO_CINE_2_COMBONACHOS_H
