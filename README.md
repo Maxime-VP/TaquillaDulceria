@@ -35,10 +35,12 @@ El programa valida la primera elección para que sea una de las 3 opciones para 
 En las preguntas de Si o No, escribir algo que no sea si se registrará como si hubiese seleccionado no.
 De igual forma, al introducir valores ajenos a los solicitados es posible que el programa crasheé o regrese un valor basura (esto pasa al seleccionar un tamaño inválido, pues de este depende que se asigne un costo al producto).
 
-Notas adicionales:
+# Notas adicionales:
 
 Para guardar los productos se crearon dos listas de apuntadores, una de 0-15 espacios para objetos de tipo combo y otra de 0-15 espacios para objetos de tipo snack, cada que se crea un objeto de dicha clase se ocupa uno de esos espacios comenzando con el espacio 0. Se ha programado que cuando se creen 15 articulos de una misma lista, termine el programa. De otra forma el programa comenzaría a guardar valores fuera de la memoria apartada.
 
 En el UML y en el código se usa tamano en lugar de tamaño para evitar que el programa crasheé
 
-
+#Correcciones
+Se han identificado los casos que harían que el código deje de funcionar adecuadamente.
+El polimorfismo está presente en la función imprimeCostoT(); de la clase Cuenta, en esta función se utilizan dos listas, una de objetos Combo y una de Objetos Snack, en las que se guardan objetos de las clases hijas de sus respectivas clases, y se utilizan apuntadores para emplear las funciones de las mismas.
