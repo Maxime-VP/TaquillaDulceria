@@ -1,12 +1,20 @@
-//
-// Created by Maxime on 5/25/2023.
-//
-#include <iostream>
-#include "Snack.h"
-using namespace std;
+
+/*
+ * Proyecto TaquillaDulceria clase Palomitas
+ * Maxime Vilcocq Parra
+ * A01710550
+ * 13/6/2023
+ *
+ * Esta clase define el objeto de tipo Palomitas, que hereda de la clase padre Snack
+ * Tiene una funcion para regresar el tipo de Snack que es
+ *
+*/
 
 #ifndef PROYECTO_CINE_2_PALOMITAS_H
 #define PROYECTO_CINE_2_PALOMITAS_H
+#include <iostream>
+#include "Snack.h"
+using namespace std;
 
 
 

@@ -1,6 +1,13 @@
-//
-// Created by Maxime on 6/1/2023.
-//
+/*
+ * Proyecto TaquillaDulceria clase ComboHotdog
+ * Maxime Vilcocq Parra
+ * A01710550
+ * 13/6/2023
+ *
+ * Esta clase define el objeto de tipo ComboHotdog, que hereda de la clase padre Combo
+ * Contiene funciones para definir su precio y regresar el tipo de combo que es
+ *
+*/
 
 #ifndef PROYECTO_CINE_2_COMBOHOTDOG_H
 #define PROYECTO_CINE_2_COMBOHOTDOG_H

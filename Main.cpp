@@ -1,3 +1,15 @@
+
+/*
+ * Proyecto TaquillaDulceria main
+ * Maxime Vilcocq Parra
+ * A01710550
+ * 13/6/2023
+ *
+ * Este es un programa que recibe instrucciones del usuario para agregar productos a su cuenta, calcular su total e
+ * imprimir su tiquet al final de la operación.
+*/
+
+
 #include <iostream>
 #include "Cuenta.h"
 

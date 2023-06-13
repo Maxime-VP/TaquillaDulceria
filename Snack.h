@@ -1,15 +1,17 @@
-//
-// Created by Maxime on 5/26/2023.
-//
+
+/*
+ * Proyecto TaquillaDulceria clase Snack
+ * Maxime Vilcocq Parra
+ * A01710550
+ * 13/6/2023
+ *
+ * Esta clase define el objeto de tipo Snack, que hereda sus propiedades a las clases hijas Palomitas y Bebida
+ * Contiene funciones para definir su precio dependiendo del tamaño, y para regresar el tamano como el Costo
+ *
+*/
 
 #ifndef PROYECTO_CINE_2_SNACK_H
 #define PROYECTO_CINE_2_SNACK_H
-
-
-
-//
-// Created by Maxime on 5/25/2023.
-//
 #include <iostream>
 
 using namespace std;
@@ -32,8 +34,20 @@ public:
 
 };
 
-Snack::Snack(string _tamano) { //constructor que recibe valores del usuario
-    tamano = _tamano;
+//constructor que recibe valores del usuario, los valores de tamano se predefinen para que haya consistencia al
+// imprimir el tamano
+Snack::Snack(string _tamano) {
+
+    if (_tamano == "grande" or _tamano == "Grande" or _tamano == "G" or _tamano == "g") {
+        tamano = "Grande";
+    }
+    if (_tamano == "mediano" or _tamano == "Mediano" or _tamano == "M" or _tamano == "m") {
+        tamano = "Mediano";
+    }
+    if (_tamano == "chico" or _tamano == "Chico" or _tamano == "C" or _tamano == "c") {
+        tamano = "Chico";
+    }
+
 }
 
 Snack::Snack() { //constructor que recibe valores del usuario

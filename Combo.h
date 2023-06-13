@@ -1,17 +1,21 @@
-//
-// Created by Maxime on 5/26/2023.
-//
-#include "Palomitas.h"
-#include "Bebida.h"
+
+/*
+ * Proyecto TaquillaDulceria clase Combo
+ * Maxime Vilcocq Parra
+ * A01710550
+ * 13/6/2023
+ *
+ * Esta clase define el objeto de tipo Combo, que hereda sus propiedades a las clases hijas ComboNachos y ComboHotdog
+ * Esta clase contiene objetos del tipo Palomitas y Bebida, que emplean sus clases hijas para asignarse un precio
+ * Contiene funciones para definir su precio y regresarlo
+ *
+*/
 
 #ifndef PROYECTO_CINE_2_COMBO_H
 #define PROYECTO_CINE_2_COMBO_H
-
-
-
-// Created by Maxime on 5/25/2023.
-//
 #include <iostream>
+#include "Palomitas.h"
+#include "Bebida.h"
 
 using namespace std;
 

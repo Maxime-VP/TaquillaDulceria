@@ -1,6 +1,18 @@
-//
-// Created by Maxime on 6/8/2023.
-//
+
+
+/*
+ * Proyecto TaquillaDulceria clase Cuenta
+ * Maxime Vilcocq Parra
+ * A01710550
+ * 13/6/2023
+ *
+ * Esta clase define el objeto de tipo Cuenta que contiene listas de apuntadores en las cuales se almacenan objetos de
+ * las clases Combo y Snack
+ *
+ * Contiene funciones para agregar objetos a sus listas y para imprimir todos los productos guardados, sus costos y el
+ * total
+ *
+*/
 
 #ifndef PROYECTO_CINE_2_CUENTA_H
 #define PROYECTO_CINE_2_CUENTA_H
@@ -92,7 +104,7 @@ void Cuenta::imprimeCostoT() {
         for (int a=0; a<i; a++){
             mensaje = botana[a]->Imprime();
             mensajeP = botana[a]->getCosto();
-            cout << mensaje << "  " << mensajeP << "\n";
+            cout << mensaje << "  "<< botana[a]->getTamano()<< " " << mensajeP << "\n";
         }
     }
     cout << "\nEl total es " << total<<"$"; //imprime el total
