@@ -82,7 +82,7 @@ int main() {
                 cin >> respuesta;
             }
 
-            c= c++; //se usa para terminar la función cuando se acaban los espacios en las listas de cuent
+            c= c + 1; //se usa para terminar la función cuando se acaban los espacios en las listas de cuent
 
             //valida si se desea ordenar algo más
             if (respuesta == "Si" or respuesta == "S" or respuesta == "s" or respuesta == "si" or respuesta =="SI"){
