@@ -35,100 +35,17 @@ private:
     //i se usa como iterador para un ciclo for de objetos Snack
     //c es la variable para ciclo para el for de objetos Combo
 
-    double total, mensajeP; //total es para sumar todos los totales
+    double total; //total es para sumar todos los totales
     //mensajeP recibe el costo de cada articulo dentro de la cuenta
 
-    string mensaje;
+
 
 public:
 
-/**
- * agregaCNachos crea un objeto ComboNachos y lo agrega a
- * un arreglo de objetos Combo
- *
- * crea un objeto ComboNachos y lo agrega al arreglo de objetos Combo usando como
- * indice c, el cuál después incrementa en 1.
- *
- * @param
- * @return
- */
-    void agregaCNachos(){
-        comboPtr[c]= new ComboNachos();
-
-        comboPtr[c] ->setCosto(); //asigna el costo del combo dependiendo de su tipo
-        cout << comboPtr[c] ->Imprime() << " " << comboPtr[c] ->getCosto() << " " << "$" << endl;
-        //imprime el tipo de combo y el costo del mismo
-
-        total = total + comboPtr[c] ->getCosto(); //suma el costo del producto al total
-
-        c=c+1;
-    };
-
-    /**
- * agregaCHotdog crea un objeto ComboHotdog y lo agrega a
- * un arreglo de objetos Combo
- *
- * crea un objeto ComboHotdog y lo agrega al arreglo de objetos Combo usando como
- * indice c, el cuál después incrementa en 1.
- *
- * @param
- * @return
- */
-    void agregaCHotdog(){
-        comboPtr[c]= new ComboHotdog();
-
-        comboPtr[c] ->setCosto(); //asigna el costo del combo dependiendo de su tipo
-        cout << comboPtr[c] ->Imprime() << " " << comboPtr[c] ->getCosto() << " " << "$" << endl;
-        //imprime el tipo de combo y el costo del mismo
-
-        total = total + comboPtr[c] ->getCosto(); //suma el costo del producto al total
-
-        c=c+1;
-    };
-
-    /**
-* agregaBebida crea un objeto Bebida y lo agrega a
-* un arreglo de objetos Snack
-*
-* crea un objeto Bebida y lo agrega al arreglo de objetos Snack usando como
-* indice i, el cuál después incrementa en 1.
-*
-* @param string _tamano debe ser "Grande", "Mediano", "Chico"
-* @return
-*/
-    void agregaBebida(string _tamano){
-        botana[i]= new Bebida(_tamano); //se guarda bebida en una lista de apuntadores
-        botana[i] ->setCosto(_tamano);
-
-        //imprime el tipo, el tamano y el costo del objeto
-        cout << "Bebida tamano " << botana[i] ->getTamano() << " " << botana[i] ->getCosto() << "$" << endl;
-        total = total + botana[i] ->getCosto(); //suma el costo del producto al total
-
-        i=i+1;
-    };
-
-    /**
-* agregaPalomitas crea un objeto Palomitas y lo agrega a
-* un arreglo de objetos Snack
-*
-* crea un objeto Palomitas y lo agrega al arreglo de objetos Snack usando como
-* indice i, el cuál después incrementa en 1.
-*
-* @param string _tamano debe ser "Grande", "Mediano", "Chico"
-* @return
-*/
-    void agregaPalomitas(string _tamano){
-        //botana[i] nos permite crear multiples instancias de palomitas o referescos y acceder a ellas después
-        botana[i]= new Palomitas(_tamano);
-        botana[i] ->setCosto(_tamano);
-
-        //imprime tipo, tamano y costo del objeto creado
-        cout << "Palomitas tamano " << botana[i] ->getTamano() << " " << botana[i] ->getCosto() << "$" << endl;
-        total = total + botana[i] ->getCosto(); //suma el costo del producto al total
-
-        i=i+1;
-    };
-
+    void agregaCNachos();
+    void agregaCHotdog();
+    void agregaBebida(string _tamano);
+    void agregaPalomitas(string _tamano);
     void imprimeCostoT();
 
 };
@@ -145,7 +62,8 @@ public:
  * @return
  */
 void Cuenta::imprimeCostoT() {
-
+    double mensajeP;
+    string mensaje;
     if (c !=0){
         for (int b=0; b<c; b++){
             mensaje = comboPtr[b]->Imprime();
@@ -165,6 +83,91 @@ void Cuenta::imprimeCostoT() {
     cout << "\nEl total es " << total<<"$"; //imprime el total
 }
 
+/**
+ * agregaCNachos crea un objeto ComboNachos y lo agrega a
+ * un arreglo de objetos Combo
+ *
+ * crea un objeto ComboNachos y lo agrega al arreglo de objetos Combo usando como
+ * indice c, el cuál después incrementa en 1.
+ *
+ * @param
+ * @return
+ */
+void Cuenta::agregaCNachos(){
+    comboPtr[c]= new ComboNachos();
 
+    comboPtr[c] ->setCosto(); //asigna el costo del combo dependiendo de su tipo
+    cout << comboPtr[c] ->Imprime() << " " << comboPtr[c] ->getCosto() << " " << "$" << endl;
+    //imprime el tipo de combo y el costo del mismo
+
+    total = total + comboPtr[c] ->getCosto(); //suma el costo del producto al total
+
+    c=c+1;
+}
+
+/**
+* agregaCHotdog crea un objeto ComboHotdog y lo agrega a
+* un arreglo de objetos Combo
+*
+* crea un objeto ComboHotdog y lo agrega al arreglo de objetos Combo usando como
+* indice c, el cuál después incrementa en 1.
+*
+* @param
+* @return
+*/
+void Cuenta:: agregaCHotdog(){
+    comboPtr[c]= new ComboHotdog();
+
+    comboPtr[c] ->setCosto(); //asigna el costo del combo dependiendo de su tipo
+    cout << comboPtr[c] ->Imprime() << " " << comboPtr[c] ->getCosto() << " " << "$" << endl;
+    //imprime el tipo de combo y el costo del mismo
+
+    total = total + comboPtr[c] ->getCosto(); //suma el costo del producto al total
+
+    c=c+1;
+}
+
+/**
+* agregaBebida crea un objeto Bebida y lo agrega a
+* un arreglo de objetos Snack
+*
+* crea un objeto Bebida y lo agrega al arreglo de objetos Snack usando como
+* indice i, el cuál después incrementa en 1.
+*
+* @param string _tamano debe ser "Grande", "Mediano", "Chico"
+* @return
+*/
+void Cuenta:: agregaBebida(string _tamano){
+    botana[i]= new Bebida(_tamano); //se guarda bebida en una lista de apuntadores
+    botana[i] ->setCosto(_tamano);
+
+    //imprime el tipo, el tamano y el costo del objeto
+    cout << "Bebida tamano " << botana[i] ->getTamano() << " " << botana[i] ->getCosto() << "$" << endl;
+    total = total + botana[i] ->getCosto(); //suma el costo del producto al total
+
+    i=i+1;
+}
+
+/**
+* agregaPalomitas crea un objeto Palomitas y lo agrega a
+* un arreglo de objetos Snack
+*
+* crea un objeto Palomitas y lo agrega al arreglo de objetos Snack usando como
+* indice i, el cuál después incrementa en 1.
+*
+* @param string _tamano debe ser "Grande", "Mediano", "Chico"
+* @return
+*/
+void Cuenta:: agregaPalomitas(string _tamano){
+    //botana[i] nos permite crear multiples instancias de palomitas o referescos y acceder a ellas después
+    botana[i]= new Palomitas(_tamano);
+    botana[i] ->setCosto(_tamano);
+
+    //imprime tipo, tamano y costo del objeto creado
+    cout << "Palomitas tamano " << botana[i] ->getTamano() << " " << botana[i] ->getCosto() << "$" << endl;
+    total = total + botana[i] ->getCosto(); //suma el costo del producto al total
+
+    i=i+1;
+}
 
 #endif //PROYECTO_CINE_2_CUENTA_H
