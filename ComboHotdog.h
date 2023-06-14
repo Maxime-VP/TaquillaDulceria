@@ -27,11 +27,23 @@ public:
 ComboHotdog::ComboHotdog(): Combo() { //constructor default
 }
 
+/**
+ * Imprime regresa el tipo de combo que es el objeto de tipo ComboHotdog
+ *
+ * @param
+ * @return string con el texto "Combo Hotdog"
+ */
 string ComboHotdog::Imprime(){ //funcion para imprimir el tipo de combo que es
     return "Combo Hotdog ";
 
 }
 
+/**
+ * setCosto asigna el valor del atributo precio del objeto de tipo ComboHotdog
+ *
+ * @param
+ * @return
+ */
 void ComboHotdog:: setCosto() { //funcion para darle un costo propio a ComboHotdog
     precio = precio + 55;
 }

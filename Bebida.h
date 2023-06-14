@@ -34,6 +34,12 @@ Bebida::Bebida() : Snack() {
 //default
 }
 
+/**
+ * Imprime regresa el tipo de snack que es el objeto de tipo Bebida
+ *
+ * @param
+ * @return string con el texto "Bebida"
+ */
 string Bebida::Imprime(){ //regresa el tipo de objeto que es
     return "Bebida ";
 }

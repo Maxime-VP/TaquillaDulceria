@@ -27,11 +27,22 @@ public:
 
 ComboNachos::ComboNachos() : Combo() { //constructor default
 }
-
+/**
+ * Imprime regresa el tipo de combo que es el objeto de tipo ComboNachos
+ *
+ * @param
+ * @return string con el texto "Combo Nachos"
+ */
 string ComboNachos::Imprime() {//funcion para imprimir el tipo de combo que es
     return "Combo Nachos";
 }
 
+/**
+ * setCosto asigna el valor del atributo precio del objeto de tipo ComboNachos
+ *
+ * @param
+ * @return
+ */
 void ComboNachos:: setCosto() { //funcion para darle un costo propio a ComboNachos
     precio = precio +40;
 }

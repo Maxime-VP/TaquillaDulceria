@@ -50,18 +50,39 @@ Snack::Snack(string _tamano) {
 
 }
 
-Snack::Snack() { //constructor que recibe valores del usuario
+Snack::Snack() { //constructor que no recibe valores del usuario
     tamano = "Grande";
     costo = 89;
 }
 
+/**
+ * getTamano regresa el atributo tamano del objeto Snack
+ *
+ * @param
+ * @return string con el tamano del objeto Snack
+ */
 string Snack::getTamano() {
     return tamano;
 }
 
+
+/**
+ * getCosto regressa el atributo costo del objeto Snack
+ *
+ * @param
+ * @return double con el costo del objeto Snack
+ */
 double Snack::getCosto(){
     return costo;
 }
+
+
+/**
+ * setCosto asigna un valor al atributo costo dependiendo el tamano del mismo
+ *
+ * @param string _tamano debe ser "Grande", "Mediano", "Chico"
+ * @return
+ */
 
 void Snack:: setCosto(string _tamano) { //asigna un valor al costo dependiendo del tamano
     if (_tamano == "grande" or _tamano == "Grande" or _tamano == "G" or _tamano == "g") {

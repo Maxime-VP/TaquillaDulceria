@@ -38,6 +38,12 @@ Palomitas::Palomitas() : Snack() {
 //crea palomitas con constructores default
 }
 
+/**
+ * Imprime regresa el tipo de snack que es el objeto de tipo Palomitas
+ *
+ * @param
+ * @return string con el texto "Palomitas"
+ */
 string Palomitas::Imprime(){ //imprime el objeto que es
     return "Palomitas ";
 }

@@ -41,6 +41,17 @@ private:
     string mensaje;
 
 public:
+
+/**
+ * agregaCNachos crea un objeto ComboNachos y lo agrega a
+ * un arreglo de objetos Combo
+ *
+ * crea un objeto ComboNachos y lo agrega al arreglo de objetos Combo usando como
+ * indice c, el cuál después incrementa en 1.
+ *
+ * @param
+ * @return
+ */
     void agregaCNachos(){
         comboPtr[c]= new ComboNachos();
 
@@ -52,6 +63,17 @@ public:
 
         c=c+1;
     };
+
+    /**
+ * agregaCHotdog crea un objeto ComboHotdog y lo agrega a
+ * un arreglo de objetos Combo
+ *
+ * crea un objeto ComboHotdog y lo agrega al arreglo de objetos Combo usando como
+ * indice c, el cuál después incrementa en 1.
+ *
+ * @param
+ * @return
+ */
     void agregaCHotdog(){
         comboPtr[c]= new ComboHotdog();
 
@@ -63,6 +85,17 @@ public:
 
         c=c+1;
     };
+
+    /**
+* agregaBebida crea un objeto Bebida y lo agrega a
+* un arreglo de objetos Snack
+*
+* crea un objeto Bebida y lo agrega al arreglo de objetos Snack usando como
+* indice i, el cuál después incrementa en 1.
+*
+* @param string _tamano debe ser "Grande", "Mediano", "Chico"
+* @return
+*/
     void agregaBebida(string _tamano){
         botana[i]= new Bebida(_tamano); //se guarda bebida en una lista de apuntadores
         botana[i] ->setCosto(_tamano);
@@ -73,6 +106,17 @@ public:
 
         i=i+1;
     };
+
+    /**
+* agregaPalomitas crea un objeto Palomitas y lo agrega a
+* un arreglo de objetos Snack
+*
+* crea un objeto Palomitas y lo agrega al arreglo de objetos Snack usando como
+* indice i, el cuál después incrementa en 1.
+*
+* @param string _tamano debe ser "Grande", "Mediano", "Chico"
+* @return
+*/
     void agregaPalomitas(string _tamano){
         //botana[i] nos permite crear multiples instancias de palomitas o referescos y acceder a ellas después
         botana[i]= new Palomitas(_tamano);
@@ -89,6 +133,17 @@ public:
 
 };
 
+/**
+ * ImprimeCostoT imprime el costo total de todos los objetos de tipo
+ * Combo y/o Snack contenidos en los arreglos de Cuenta
+ *
+ * Si c es diferente a 0, imprime todos los objetos Combo almacenados (tipo de Combo y sus precios)
+ * Si i es diferente a 0, imprime todos los objetos Snack almacenados (tipo de Snack, tamano y sus costos)
+ * Suma los costos y precios de todos los objetos almacenados e imprime el total
+ *
+ * @param
+ * @return
+ */
 void Cuenta::imprimeCostoT() {
 
     if (c !=0){

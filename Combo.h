@@ -43,6 +43,12 @@ Combo::Combo() { //constructor que recibe valores del usuario
 
 }
 
+/**
+ * getCosto regressa el atributo precio del objeto Combo
+ *
+ * @param
+ * @return double con el precio del objeto Combo
+ */
 double Combo::getCosto(){ //regresa el precio/costo del combo
     return precio;
 }
